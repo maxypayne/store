@@ -1,0 +1,36 @@
+<div>
+  <h2>Panier ({{ itemCount() }} articles)</h2>
+<!--  <div *ngFor="let item of items(); let i = index">-->
+<!--    -->
+<!--  </div>-->
+  @for (item of items(); track item.id; let i = $index) {
+    <div>
+      <p>{{ item.id }}{{ item.name }} - {{ item.price }}€ x {{ item.quantity }}</p>
+      <button (click)="removeItem(i)">Supprimer</button>
+    </div>
+    <br />
+  }
+  <p><strong>Total: {{ total() }}€</strong></p>
+  <button (click)="addItem()">Ajouter article</button>
+</div>
+
+
+<!--<div>-->
+<!--  <h2>Liste des tâches</h2>-->
+<!--  <input #newTodo (keyup.enter)="addTodo(newTodo.value); newTodo.value = ''">-->
+<!--  <button (click)="addTodo(newTodo.value); newTodo.value = ''">Ajouter</button>-->
+
+<!--  @for (todo of todos(); tr)-->
+<!--  <div>-->
+<!--    <label>-->
+<!--      <input-->
+<!--        type="checkbox"-->
+<!--        [checked]="todo.completed"-->
+<!--        (change)="toggleTodo(todo.id)">-->
+<!--      <span [class.completed]="todo.completed">{{ todo.title }}</span>-->
+<!--    </label>-->
+<!--    <button (click)="removeTodo(todo.id)">×</button>-->
+<!--  </div>-->
+
+<!--  <p>{{ completedCount() }} / {{ totalCount() }} terminées</p>-->
+<!--</div>-->

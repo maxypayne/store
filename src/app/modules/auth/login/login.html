@@ -1,0 +1,23 @@
+<div id="auth">
+  <mat-card class="login-container">
+    <mat-card-header>
+      <div class="logo"></div>
+      <h1 class="title">Welcome back</h1>
+      <p class="subtitle">Sign in to your account</p>
+    </mat-card-header>
+
+    <mat-card-content>
+      <app-auth-form></app-auth-form>
+    </mat-card-content>
+    <mat-card-footer>
+      <button mat-flat-button color="primary" (click)="login()">
+        <span id="buttonText">Sign in</span>
+        @if (isLoading) {<mat-spinner></mat-spinner>}
+      </button>
+      <div class="create-account">
+        <p>Don't have an account?</p>
+        <a href="#" class="text-button">CREATE ACCOUNT</a>
+      </div>
+    </mat-card-footer>
+  </mat-card>
+</div>

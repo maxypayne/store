@@ -1,0 +1,20 @@
+<div id="auth">
+  <div class="login-container">
+    <div class="header">
+      <div class="logo"></div>
+      <h1 class="title">Welcome back</h1>
+      <p class="subtitle">Sign in to your account</p>
+    </div>
+    <app-auth-form></app-auth-form>
+
+    <button mat-flat-button color="primary" (click)="register()">
+      <span id="buttonText">Sign in</span>
+      @if (isLoading) {<mat-spinner></mat-spinner>}
+    </button>
+
+    <div>
+      <p>Already have an account?</p>
+      <a href="#" class="text-button">SUBMIT INTO</a>
+    </div>
+  </div>
+</div>
