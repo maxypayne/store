@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { computed } from '@angular/core';
 import { tap } from 'rxjs/operators';
+import {Observable} from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -13,11 +14,11 @@ export class AuthService {
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  login(username: string, password: string) {
-    return this.http.post<{ token: string }>('YOUR_API_URL/login', { username, password })
+  login(email: string, password: string): Observable<string> {
+    return this.http.post<string>('http://localhost:9092/auth/login', { email, password })
       .pipe(
-        tap(res => {
-          localStorage.setItem(this.tokenKey, res.token);
+        tap(token => {
+          localStorage.setItem(this.tokenKey, token);
           this.isLoggedInSignal.set(true);
         })
       );

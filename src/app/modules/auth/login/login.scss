@@ -57,6 +57,12 @@ body::before {
     display: flex;
     align-items: center;
     flex-direction: column;
+     margin-bottom: 30px;
+     .title {
+       margin-bottom: 10px;
+     }
+  }
+  mat-card-content {
   }
   mat-card-footer {
     display: flex;
@@ -64,8 +70,23 @@ body::before {
     flex-direction: column;
     gap: 10px;
     .create-account {
+      width: 100%;
+      display: flex;
+      margin-top: 20px;
+      align-items: center;
+      flex-direction: column;
       :first-child {
         margin-bottom: 10px;
+      }
+    }
+    .divider {
+      display: flex;
+      width: 100%;
+      span {
+        margin: 0 10px;
+      }
+      hr {
+        width: 100%;
       }
     }
   }

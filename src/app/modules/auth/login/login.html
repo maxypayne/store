@@ -7,13 +7,27 @@
     </mat-card-header>
 
     <mat-card-content>
-      <app-auth-form></app-auth-form>
+      <form [formGroup]="form">
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label>Email</mat-label>
+          <input matInput [formControlName]="'email'">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput [formControlName]="'password'">
+        </mat-form-field>
+      </form>
     </mat-card-content>
     <mat-card-footer>
       <button mat-flat-button color="primary" (click)="login()">
         <span id="buttonText">Sign in</span>
         @if (isLoading) {<mat-spinner></mat-spinner>}
       </button>
+      <div class="divider">
+        <hr>
+        <span>or</span>
+        <hr>
+      </div>
       <div class="create-account">
         <p>Don't have an account?</p>
         <a href="#" class="text-button">CREATE ACCOUNT</a>
