@@ -14,11 +14,11 @@ export class AuthService {
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  login(email: string, password: string): Observable<string> {
-    return this.http.post<string>('http://localhost:9092/auth/login', { email, password })
+  login(email: string, password: string): Observable<{token: string}> {
+    return this.http.post<{token: string}>('http://localhost:9092/auth/login', { email, password })
       .pipe(
-        tap(token => {
-          localStorage.setItem(this.tokenKey, token);
+        tap(res => {
+          localStorage.setItem(this.tokenKey, res.token);
           this.isLoggedInSignal.set(true);
         })
       );

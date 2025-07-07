@@ -1,7 +1,19 @@
-@for (product of products; track product.id) {
-  <p>{{product.title}}</p>
-  <p>{{product.description}}</p>
-  <p>{{product.imageUrl}}</p>
-  <p>{{product.id}}</p>
+<div id="visualise-products">
+  <div class="products-container">
+    @for (product of products(); track product.id) {
+      <mat-card>
+        <!--    <img mat-card-image [ngSrc]="product.imageUrl" alt="" fill>-->
+        <img mat-card-image src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=500&h=500&fit=crop" alt="">
+        <mat-card-content>
+          <h3 class="title">{{product.title}}</h3>
+          <p>{{product.description}}</p>
+        </mat-card-content>
+        <div class="buttons">
+          <button mat-raised-button>View details</button>
+          <button matButton="filled">Add to card</button>
+        </div>
+      </mat-card>
+    }
+  </div>
 
-}
+</div>

@@ -1,0 +1,53 @@
+#visualise-products {
+  .products-container {
+    display: flex;
+    mat-card {
+      .title {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 16px 16px;
+  }
+  @media screen and (min-width: 300px) and (max-width: 639px) {
+    .mon-element {
+      background-color: lightblue;
+    }
+  }
+
+  @media screen and (min-width: 640px) and (max-width: 1023px) {
+    .mon-element {
+      background-color: lightgreen;
+    }
+  }
+
+  /* 1024px à 1280px : Laptop et grands écrans */
+  @media screen and (min-width: 1024px) and (max-width: 1279px) {
+    .mon-element {
+      background-color: lightcoral;
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    .products-container {
+      width: 1220px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      mat-card {
+        font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        width: 290px;
+        img {
+          height: 250px;
+        }
+        mat-card-content {
+          padding: 16px;
+        }
+      }
+    }
+  }
+}
+
